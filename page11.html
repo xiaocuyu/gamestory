@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游戏技术的演进：从像素到实时光线追踪</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pixel-text {
+            font-family: 'Press Start 2P', cursive;
+            text-shadow: 2px 2px 0 #4c1d95;
+        }
+        
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(124, 58, 237, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(124, 58, 237, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        .tech-card {
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(139, 233, 253, 0.4);
+        }
+        
+        .pixel-border {
+            box-shadow: 0 0 0 2px #4c1d95, 
+                        0 0 0 4px #5b21b6;
+            border-radius: 4px;
+        }
+        
+        .era-marker {
+            position: relative;
+            padding-left: 28px;
+        }
+        
+        .era-marker::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            background-color: #8be9fd;
+            border-radius: 3px;
+            box-shadow: 0 0 0 3px rgba(139, 233, 253, 0.3);
+        }
+        
+        .pixel-decoration {
+            image-rendering: pixelated;
+            position: absolute;
+            opacity: 0.15;
+            z-index: 0;
+        }
+        
+        .pixel-block-8bit {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #8be9fd;
+            opacity: 0.6;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 140px;
+            bottom: 80px;
+            width: 4px;
+            background: linear-gradient(to bottom, #4f46e5, #7c3aed, #8b5cf6);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-node {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #8b5cf6;
+            border: 3px solid #4f46e5;
+            z-index: 10;
+        }
+        
+        .timeline-content-left {
+            position: absolute;
+            right: 52%;
+            width: 45%;
+            text-align: right;
+            padding-right: 20px;
+        }
+        
+        .timeline-content-right {
+            position: absolute;
+            left: 52%;
+            width: 45%;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body class="bg-gray-900">
+    <div class="slide-container bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 grid-pattern">
+        <!-- Header -->
+        <div class="px-12 pt-8">
+            <h1 class="pixel-text text-2xl text-blue-300 mb-2">游戏技术的演进</h1>
+            <div class="w-full h-1 bg-gradient-to-r from-blue-400 via-purple-500 to-blue-400"></div>
+            <h2 class="text-xl text-indigo-200 mt-2 font-light">从像素到实时光线追踪</h2>
+        </div>
+        
+        <!-- Decorative pixel elements -->
+        <div class="pixel-block-8bit" style="top: 120px; right: 200px;"></div>
+        <div class="pixel-block-8bit" style="top: 130px; right: 214px;"></div>
+        <div class="pixel-block-8bit" style="top: 120px; right: 222px;"></div>
+        <div class="pixel-block-8bit" style="top: 130px; right: 230px;"></div>
+        
+        <div class="pixel-block-8bit" style="bottom: 150px; left: 180px;"></div>
+        <div class="pixel-block-8bit" style="bottom: 160px; left: 194px;"></div>
+        <div class="pixel-block-8bit" style="bottom: 150px; left: 202px;"></div>
+        <div class="pixel-block-8bit" style="bottom: 160px; left: 210px;"></div>
+        
+        <!-- Timeline -->
+        <div class="timeline-line"></div>
+        
+        <!-- 1970s-80s: 8-bit Era -->
+        <div class="timeline-node" style="top: 180px;"></div>
+        <div class="timeline-content-left" style="top: 160px;">
+            <h3 class="text-blue-300 font-bold text-sm">1970-80年代：8位元时代</h3>
+            <p class="text-xs text-indigo-100 mt-1">最早的像素游戏，单色或16色调色板，分辨率通常为256×224像素。代表作品：《吃豆人》、《超级马里奥》。</p>
+        </div>
+        <div class="timeline-content-right" style="top: 160px;">
+            <div class="tech-card pixel-border bg-indigo-800 bg-opacity-70 rounded overflow-hidden">
+                <img src="https://cdn.jsdelivr.net/gh/PixLabInc/images@main/pacman-8bit.png" alt="8位元时代" class="w-full h-24 object-cover" style="image-rendering: pixelated;">
+            </div>
+        </div>
+        
+        <!-- 1990s: 16-bit Era -->
+        <div class="timeline-node" style="top: 250px;"></div>
+        <div class="timeline-content-right" style="top: 230px;">
+            <h3 class="text-blue-300 font-bold text-sm">1990年代：16位元时代</h3>
+            <p class="text-xs text-indigo-100 mt-1">256色调色板，精致的2D精灵图像和滚动背景。Mode 7等技术创造伪3D效果。代表作品：《索尼克》、《街头霸王II》。</p>
+        </div>
+        <div class="timeline-content-left" style="top: 230px;">
+            <div class="tech-card pixel-border bg-indigo-800 bg-opacity-70 rounded overflow-hidden">
+                <img src="https://cdn.jsdelivr.net/gh/PixLabInc/images@main/sonic-16bit.jpg" alt="16位元时代" class="w-full h-24 object-cover">
+            </div>
+        </div>
+        
+        <!-- Late 1990s: Early 3D -->
+        <div class="timeline-node" style="top: 320px;"></div>
+        <div class="timeline-content-left" style="top: 300px;">
+            <h3 class="text-blue-300 font-bold text-sm">1990年代末：早期3D</h3>
+            <p class="text-xs text-indigo-100 mt-1">多边形3D模型，纹理贴图，固定管线渲染。低分辨率，缺乏细节。代表作品：《古墓丽影》、《最终幻想VII》。</p>
+        </div>
+        <div class="timeline-content-right" style="top: 300px;">
+            <div class="tech-card pixel-border bg-indigo-800 bg-opacity-70 rounded overflow-hidden">
+                <img src="https://cdn.jsdelivr.net/gh/PixLabInc/images@main/early-3d.jpg" alt="早期3D" class="w-full h-24 object-cover">
+            </div>
+        </div>
+        
+        <!-- 2000s: Programmable Shaders -->
+        <div class="timeline-node" style="top: 390px;"></div>
+        <div class="timeline-content-right" style="top: 370px;">
+            <h3 class="text-blue-300 font-bold text-sm">2000年代：可编程着色器</h3>
+            <p class="text-xs text-indigo-100 mt-1">着色器程序允许高级视觉效果，动态光照和阴影，复杂3D场景。代表作品：《半条命2》、《光环3》。</p>
+        </div>
+        <div class="timeline-content-left" style="top: 370px;">
+            <div class="tech-card pixel-border bg-indigo-800 bg-opacity-70 rounded overflow-hidden">
+                <img src="https://cdn.jsdelivr.net/gh/PixLabInc/images@main/shader-era.jpg" alt="着色器时代" class="w-full h-24 object-cover">
+            </div>
+        </div>
+        
+        <!-- 2010s: HD Gaming -->
+        <div class="timeline-node" style="top: 460px;"></div>
+        <div class="timeline-content-left" style="top: 440px;">
+            <h3 class="text-blue-300 font-bold text-sm">2010年代：高清游戏</h3>
+            <p class="text-xs text-indigo-100 mt-1">物理渲染系统、全局光照、毛发和流体模拟。1080p/4K分辨率成为标准。代表作品：《荒野大镖客2》、《神秘海域4》。</p>
+        </div>
+        <div class="timeline-content-right" style="top: 440px;">
+            <div class="tech-card pixel-border bg-indigo-800 bg-opacity-70 rounded overflow-hidden">
+                <img src="https://cdn.jsdelivr.net/gh/PixLabInc/images@main/hd-gaming.jpg" alt="高清游戏" class="w-full h-24 object-cover">
+            </div>
+        </div>
+        
+        <!-- 2020s: Ray Tracing -->
+        <div class="timeline-node" style="top: 530px;"></div>
+        <div class="timeline-content-right" style="top: 510px;">
+            <h3 class="text-blue-300 font-bold text-sm">2020年代：实时光线追踪</h3>
+            <p class="text-xs text-indigo-100 mt-1">基于物理的光线追踪，逼真的反射、散射和阴影，近乎电影级的视觉效果。代表作品：《控制》、《赛博朋克2077》。</p>
+        </div>
+        <div class="timeline-content-left" style="top: 510px;">
+            <div class="tech-card pixel-border bg-indigo-800 bg-opacity-70 rounded overflow-hidden">
+                <img src="https://cdn.jsdelivr.net/gh/PixLabInc/images@main/ray-tracing.jpg" alt="光线追踪" class="w-full h-24 object-cover">
+            </div>
+        </div>
+        
+        <!-- Future -->
+        <div class="timeline-node" style="top: 600px;"></div>
+        <div class="timeline-content-left" style="top: 580px;">
+            <h3 class="text-blue-300 font-bold text-sm">未来技术趋势</h3>
+            <p class="text-xs text-indigo-100 mt-1">AI驱动的实时内容生成、全息显示、脑机接口、超逼真感官体验，技术与现实的界限将越来越模糊。</p>
+        </div>
+        <div class="timeline-content-right" style="top: 580px;">
+            <div class="tech-card pixel-border bg-indigo-800 bg-opacity-70 rounded overflow-hidden p-2">
+                <div class="flex justify-center items-center h-20 bg-indigo-900 bg-opacity-50 rounded">
+                    <div class="text-center">
+                        <svg class="w-10 h-10 mx-auto text-blue-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                        </svg>
+                        <div class="text-xs text-blue-300 mt-1">未来待续...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom summary section -->
+        <div class="absolute bottom-6 left-0 right-0 px-12">
+            <div class="bg-indigo-900 bg-opacity-40 p-3 rounded-lg pixel-border">
+                <h3 class="text-blue-300 text-sm font-bold mb-1">关键技术革命点</h3>
+                <div class="grid grid-cols-4 gap-3 text-xs text-indigo-100">
+                    <div class="era-marker">从精灵到3D多边形</div>
+                    <div class="era-marker">固定管线到可编程着色器</div>
+                    <div class="era-marker">光栅化到物理渲染</div>
+                    <div class="era-marker">传统渲染到实时光线追踪</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Page indicator -->
+        <div class="absolute bottom-4 right-4 text-white text-opacity-70 font-mono">
+            11 / 17
+        </div>
+    </div>
+</body>
+</html>

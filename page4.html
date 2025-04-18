@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>街机与家用游戏机的诞生（1970-1983）</title>
+    <link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pixel-text {
+            font-family: 'Press Start 2P', cursive;
+            text-shadow: 2px 2px 0 #4c1d95;
+        }
+        
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(124, 58, 237, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(124, 58, 237, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 32px;
+            margin-bottom: 16px;
+        }
+        
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 16px;
+            height: 16px;
+            background-color: #8be9fd;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(139, 233, 253, 0.3);
+        }
+        
+        .timeline-item::after {
+            content: "";
+            position: absolute;
+            left: 8px;
+            top: 20px;
+            bottom: -16px;
+            width: 2px;
+            background-color: #8be9fd;
+        }
+        
+        .timeline-item:last-child::after {
+            display: none;
+        }
+        
+        .pixel-border {
+            box-shadow: 0 0 0 2px #4c1d95, 
+                        0 0 0 4px #5b21b6;
+            border-radius: 4px;
+        }
+        
+        .game-card {
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+        
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(76, 29, 149, 0.6);
+        }
+        
+        .pixel-decoration {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #8be9fd;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body class="bg-gray-900">
+    <div class="slide-container bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 grid-pattern">
+        <!-- Pixel decorations -->
+        <div class="pixel-decoration" style="top: 30px; right: 120px;"></div>
+        <div class="pixel-decoration" style="top: 50px; right: 140px;"></div>
+        <div class="pixel-decoration" style="top: 30px; right: 160px;"></div>
+        <div class="pixel-decoration" style="bottom: 40px; left: 120px;"></div>
+        <div class="pixel-decoration" style="bottom: 60px; left: 140px;"></div>
+        <div class="pixel-decoration" style="bottom: 40px; left: 160px;"></div>
+        
+        <!-- Header -->
+        <div class="px-12 pt-8">
+            <h1 class="pixel-text text-2xl text-blue-300 mb-2">街机与家用游戏机的诞生（1970-1983）</h1>
+            <div class="w-full h-1 bg-gradient-to-r from-blue-400 via-purple-500 to-blue-400"></div>
+            <h2 class="text-xl text-indigo-200 mt-2 font-light">雅达利与第一次游戏革命</h2>
+        </div>
+        
+        <!-- Main content -->
+        <div class="flex px-12 py-6">
+            <!-- Left column -->
+            <div class="w-1/2 pr-8">
+                <div class="space-y-1 mb-4">
+                    <div class="timeline-item">
+                        <div class="text-indigo-100 font-semibold">1972</div>
+                        <div class="text-blue-200 text-sm">Atari 成立，发布世界首款街机游戏《Pong》，简单的乒乓球模拟游戏成为第一个商业成功的电子游戏</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="text-indigo-100 font-semibold">1975</div>
+                        <div class="text-blue-200 text-sm">《乓》家用版推出，成为第一款大规模生产的家用游戏机</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="text-indigo-100 font-semibold">1977</div>
+                        <div class="text-blue-200 text-sm">Atari 2600 发布，采用可更换卡带的设计，成为游戏机历史上的里程碑产品</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="text-indigo-100 font-semibold">1978-1980</div>
+                        <div class="text-blue-200 text-sm">《太空入侵者》(Space Invaders)、《吃豆人》(Pac-Man)等经典街机游戏推出，引发街机游戏热潮</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="text-indigo-100 font-semibold">1983</div>
+                        <div class="text-blue-200 text-sm">北美游戏业大崩溃，产业收入从35亿美元骤降至1亿美元，标志着第一次游戏革命的结束</div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 text-indigo-200 bg-indigo-900 bg-opacity-50 p-4 rounded-lg">
+                    <div class="font-bold mb-2 text-blue-300">1983年游戏业崩溃的原因:</div>
+                    <ul class="list-disc pl-5 space-y-1 text-sm">
+                        <li>市场过度饱和，低质量游戏泛滥</li>
+                        <li>新兴个人电脑分流了游戏玩家</li>
+                        <li>缺乏有效的质量控制和市场监管</li>
+                        <li>《ET外星人》等重大商业失败项目</li>
+                        <li>过度的硬件竞争导致消费者困惑</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Right column -->
+            <div class="w-1/2">
+                <div class="flex flex-wrap gap-3">
+                    <!-- Pong Arcade -->
+                    <div class="game-card pixel-border bg-indigo-800 bg-opacity-70 p-2 rounded-lg overflow-hidden w-48">
+                        <img src="https://cdn.jsdelivr.net/gh/PixLabInc/images@main/pong-arcade.jpg" alt="Pong Arcade 1972" class="w-full h-32 object-cover rounded">
+                        <div class="text-xs text-center text-indigo-200 mt-1">Pong 街机 (1972)</div>
+                    </div>
+                    
+                    <!-- Atari 2600 -->
+                    <div class="game-card pixel-border bg-indigo-800 bg-opacity-70 p-2 rounded-lg overflow-hidden w-48">
+                        <img src="https://cdn.jsdelivr.net/gh/PixLabInc/images@main/atari-2600.jpg" alt="Atari 2600" class="w-full h-32 object-cover rounded">
+                        <div class="text-xs text-center text-indigo-200 mt-1">Atari 2600 (1977)</div>
+                    </div>
+                    
+                    <!-- Space Invaders -->
+                    <div class="game-card pixel-border bg-indigo-800 bg-opacity-70 p-2 rounded-lg overflow-hidden w-48">
+                        <img src="https://cdn.jsdelivr.net/gh/PixLabInc/images@main/space-invaders.jpg" alt="Space Invaders" class="w-full h-32 object-cover rounded">
+                        <div class="text-xs text-center text-indigo-200 mt-1">太空入侵者 (1978)</div>
+                    </div>
+                    
+                    <!-- Pac-Man -->
+                    <div class="game-card pixel-border bg-indigo-800 bg-opacity-70 p-2 rounded-lg overflow-hidden w-48">
+                        <img src="https://cdn.jsdelivr.net/gh/PixLabInc/images@main/pacman.jpg" alt="Pac-Man" class="w-full h-32 object-cover rounded">
+                        <div class="text-xs text-center text-indigo-200 mt-1">吃豆人 (1980)</div>
+                    </div>
+                </div>
+                
+                <div class="mt-4 bg-blue-900 bg-opacity-30 p-4 rounded-lg border border-blue-700">
+                    <h3 class="text-lg text-blue-300 mb-2">雅达利的革命性贡献</h3>
+                    <ul class="list-none space-y-2 text-sm text-indigo-100">
+                        <li class="flex items-start">
+                            <span class="inline-block w-4 h-4 mt-0.5 mr-2 bg-blue-500"></span>
+                            <span>创立了电子游戏产业的商业模式</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="inline-block w-4 h-4 mt-0.5 mr-2 bg-blue-500"></span>
+                            <span>推动了可更换卡带技术的普及</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="inline-block w-4 h-4 mt-0.5 mr-2 bg-blue-500"></span>
+                            <span>培养了第一代游戏开发者</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="inline-block w-4 h-4 mt-0.5 mr-2 bg-blue-500"></span>
+                            <span>将电子游戏从小众娱乐变为大众文化现象</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Page indicator -->
+        <div class="absolute bottom-4 right-4 text-white text-opacity-70 font-mono">
+            4 / 17
+        </div>
+    </div>
+</body>
+</html>

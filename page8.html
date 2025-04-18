@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>微软入局与三国鼎立（2001-2005）</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pixel-text {
+            font-family: 'Press Start 2P', cursive;
+            text-shadow: 2px 2px 0 #4c1d95;
+        }
+        
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(124, 58, 237, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(124, 58, 237, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 32px;
+            margin-bottom: 12px;
+        }
+        
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            background-color: #8be9fd;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(139, 233, 253, 0.3);
+        }
+        
+        .timeline-item::after {
+            content: "";
+            position: absolute;
+            left: 8px;
+            top: 50%;
+            width: 24px;
+            height: 2px;
+            background-color: #8be9fd;
+            transform: translateY(-50%);
+        }
+        
+        .pixel-border {
+            box-shadow: 0 0 0 2px #4c1d95, 
+                        0 0 0 4px #5b21b6;
+            border-radius: 4px;
+        }
+        
+        .game-card {
+            transition: all 0.3s ease;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(139, 233, 253, 0.4);
+        }
+        
+        .console-badge {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .console-badge:hover {
+            transform: translateY(-3px);
+        }
+        
+        .xbox-glow {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            width: 120px;
+            height: 120px;
+            background-image: url('https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f3ae.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            filter: drop-shadow(0 0 15px rgba(21, 128, 61, 0.7));
+            opacity: 0.2;
+            transform: rotate(15deg);
+        }
+        
+        .console-icon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 4px;
+            vertical-align: text-bottom;
+        }
+        
+        .halo-ring {
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            width: calc(100% + 30px);
+            height: calc(100% + 30px);
+            border-radius: 50%;
+            border: 2px solid #10b981;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .halo-container:hover .halo-ring {
+            opacity: 0.6;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.05); opacity: 0.3; }
+            100% { transform: scale(1); opacity: 0.6; }
+        }
+    </style>
+</head>
+<body class="bg-gray-900">
+    <div class="slide-container bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 grid-pattern">
+        <!-- Header -->
+        <div class="px-12 pt-8">
+            <h1 class="pixel-text text-2xl text-blue-300 mb-2">微软入局与三国鼎立（2001-2005）</h1>
+            <div class="w-full h-1 bg-gradient-to-r from-blue-400 via-purple-500 to-blue-400"></div>
+            <h2 class="text-xl text-indigo-200 mt-2 font-light">Xbox的登场</h2>
+        </div>
+        
+        <!-- Main content -->
+        <div class="flex px-12 py-4">
+            <!-- Left column: Xbox and Facts -->
+            <div class="w-1/2 pr-6">
+                <!-- Xbox Console -->
+                <div class="flex space-x-4 mb-4">
+                    <div class="w-1/2 halo-container relative">
+                        <div class="halo-ring"></div>
+                        <img src="https://cdn.jsdelivr.net/gh/PixLabInc/images@main/xbox-original.jpg" alt="Original Xbox" class="w-full h-40 object-cover rounded-lg pixel-border">
+                    </div>
+                    <div class="w-1/2 bg-indigo-900 bg-opacity-50 rounded-lg p-3 text-indigo-200">
+                        <h3 class="text-green-400 font-bold mb-1">Xbox (2001)</h3>
+                        <ul class="list-disc pl-4 space-y-1 text-xs">
+                            <li>733MHz Intel Pentium III处理器</li>
+                            <li>内置硬盘，革命性的存储方案</li>
+                            <li>基于PC架构的游戏主机</li>
+                            <li>DirectX图形API技术支持</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Timeline -->
+                <div class="bg-indigo-900 bg-opacity-40 p-3 rounded-lg pixel-border mb-4">
+                    <h3 class="text-blue-300 text-sm font-bold mb-2">微软入局时间线</h3>
+                    <div class="space-y-2">
+                        <div class="timeline-item text-xs text-indigo-100">
+                            <span class="text-green-400 font-semibold">2000/03:</span> 比尔·盖茨正式宣布Xbox计划
+                        </div>
+                        <div class="timeline-item text-xs text-indigo-100">
+                            <span class="text-green-400 font-semibold">2001/11:</span> Xbox在北美地区发售
+                        </div>
+                        <div class="timeline-item text-xs text-indigo-100">
+                            <span class="text-green-400 font-semibold">2002/02:</span> Xbox在日本市场发售，表现欠佳
+                        </div>
+                        <div class="timeline-item text-xs text-indigo-100">
+                            <span class="text-green-400 font-semibold">2002/11:</span> Xbox Live服务推出，革新在线游戏
+                        </div>
+                        <div class="timeline-item text-xs text-indigo-100">
+                            <span class="text-green-400 font-semibold">2005/11:</span> Xbox 360发布，性能领先同世代
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Xbox Live -->
+                <div class="bg-green-900 bg-opacity-30 p-3 rounded-lg border border-green-700">
+                    <h3 class="text-lg text-green-400 mb-2">Xbox Live的革命性影响</h3>
+                    <ul class="list-none space-y-1.5 text-sm text-indigo-100">
+                        <li class="flex items-start">
+                            <span class="inline-block w-3 h-3 mt-1 mr-2 bg-green-500"></span>
+                            <span>首个成熟的主机在线游戏平台</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="inline-block w-3 h-3 mt-1 mr-2 bg-green-500"></span>
+                            <span>统一的好友系统与玩家档案</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="inline-block w-3 h-3 mt-1 mr-2 bg-green-500"></span>
+                            <span>数字内容分发的先驱</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="inline-block w-3 h-3 mt-1 mr-2 bg-green-500"></span>
+                            <span>语音聊天成为标准功能</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Right column: Three-way Competition -->
+            <div class="w-1/2 pl-6">
+                <h3 class="text-blue-300 font-bold mb-3">三国鼎立时代的主机格局</h3>
+                
+                <!-- Console Comparison -->
+                <div class="grid grid-cols-3 gap-2 mb-4">
+                    <!-- PlayStation 2 -->
+                    <div class="console-badge bg-indigo-800 bg-opacity-60 p-2 rounded-lg text-center">
+                        <img src="https://cdn.jsdelivr.net/gh/PixLabInc/images@main/ps2.jpg" alt="PlayStation 2" class="w-full h-24 object-cover rounded mb-1">
+                        <div class="text-xs font-bold text-blue-300">PlayStation 2</div>
+                        <div class="text-xs text-indigo-200">全球销量: 1.55亿台</div>
+                    </div>
+                    
+                    <!-- Xbox -->
+                    <div class="console-badge bg-green-900 bg-opacity-60 p-2 rounded-lg text-center">
+                        <img src="https://cdn.jsdelivr.net/gh/PixLabInc/images@main/xbox-top.jpg" alt="Xbox" class="w-full h-24 object-cover rounded mb-1">
+                        <div class="text-xs font-bold text-green-400">Xbox</div>
+                        <div class="text-xs text-indigo-200">全球销量: 2400万台</div>
+                    </div>
+                    
+                    <!-- GameCube -->
+                    <div class="console-badge bg-indigo-800 bg-opacity-60 p-2 rounded-lg text-center">
+                        <img src="https://cdn.jsdelivr.net/gh/PixLabInc/images@main/gamecube.jpg" alt="GameCube" class="w-full h-24 object-cover rounded mb-1">
+                        <div class="text-xs font-bold text-purple-300">GameCube</div>
+                        <div class="text-xs text-indigo-200">全球销量: 2200万台</div>
+                    </div>
+                </div>
+                
+                <!-- Xbox Exclusive Games -->
+                <h3 class="text-green-400 font-bold text-sm mb-2">Xbox标志性独占游戏</h3>
+                <div class="grid grid-cols-2 gap-3 mb-4">
+                    <!-- Halo -->
+                    <div class="game-card pixel-border bg-indigo-800 bg-opacity-70 p-2 rounded-lg overflow-hidden">
+                        <img src="https://cdn.jsdelivr.net/gh/PixLabInc/images@main/halo.jpg" alt="Halo: Combat Evolved" class="w-full h-28 object-cover rounded">
+                        <div class="text-xs text-center text-green-400 mt-1 font-bold">光环：战斗进化 (2001)</div>
+                        <div class="text-xs text-indigo-200 px-1">重新定义主机FPS游戏，改变了Xbox品牌命运的旗舰作品</div>
+                    </div>
+                    
+                    <!-- Fable -->
+                    <div class="game-card pixel-border bg-indigo-800 bg-opacity-70 p-2 rounded-lg overflow-hidden">
+                        <img src="https://cdn.jsdelivr.net/gh/PixLabInc/images@main/fable.jpg" alt="Fable" class="w-full h-28 object-cover rounded">
+                        <div class="text-xs text-center text-green-400 mt-1 font-bold">寓言 (2004)</div>
+                        <div class="text-xs text-indigo-200 px-1">Peter Molyneux开创的西式RPG杰作，强调玩家选择与后果</div>
+                    </div>
+                </div>
+                
+                <!-- Microsoft's Strategy -->
+                <div class="bg-indigo-900 bg-opacity-50 p-3 rounded-lg pixel-border">
+                    <h3 class="text-blue-300 text-sm font-bold mb-2">微软的游戏战略</h3>
+                    <div class="text-xs text-indigo-100">
+                        <p class="mb-2">微软凭借PC领域的优势和雄厚资金进入游戏主机市场，虽然首代Xbox在销量上落后于PS2，但其技术创新与独特定位为微软赢得了立足之地。Xbox的内置硬盘、宽带网络连接和Xbox Live服务，为主机游戏带来PC游戏的便利性，同时收购Bungie等工作室打造独占游戏阵容。</p>
+                        <p>这一时期，主机游戏从图形表现到在线功能都有质的飞跃，三大厂商的不同策略丰富了游戏产业的发展路径，为下一代主机大战奠定基础。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decorative Xbox icon -->
+        <div class="xbox-glow"></div>
+        
+        <!-- Page indicator -->
+        <div class="absolute bottom-4 right-4 text-white text-opacity-70 font-mono">
+            8 / 17
+        </div>
+    </div>
+</body>
+</html>

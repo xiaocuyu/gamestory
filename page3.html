@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电子游戏的起源（1947-1970）</title>
+    <link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pixel-text {
+            font-family: 'Press Start 2P', cursive;
+            text-shadow: 2px 2px 0 #4c1d95;
+        }
+        
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(124, 58, 237, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(124, 58, 237, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 32px;
+            margin-bottom: 12px;
+        }
+        
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            background-color: #8be9fd;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(139, 233, 253, 0.3);
+        }
+        
+        .timeline-item::after {
+            content: "";
+            position: absolute;
+            left: 8px;
+            top: 50%;
+            width: 24px;
+            height: 2px;
+            background-color: #8be9fd;
+            transform: translateY(-50%);
+        }
+        
+        .pixel-border {
+            box-shadow: 0 0 0 2px #4c1d95, 
+                        0 0 0 4px #5b21b6;
+            border-radius: 4px;
+        }
+        
+        .crt-effect {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .crt-effect::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+            background-size: 100% 4px;
+            z-index: 2;
+            pointer-events: none;
+            opacity: 0.2;
+        }
+        
+        @keyframes scan {
+            0% { top: -100%; }
+            100% { top: 100%; }
+        }
+        
+        .crt-effect::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            animation: scan 6s linear infinite;
+            z-index: 2;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-900">
+    <div class="slide-container bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 grid-pattern">
+        <!-- Header -->
+        <div class="px-12 pt-8">
+            <h1 class="pixel-text text-2xl text-blue-300 mb-2">电子游戏的起源（1947-1970）</h1>
+            <div class="w-full h-1 bg-gradient-to-r from-blue-400 via-purple-500 to-blue-400"></div>
+            <h2 class="text-xl text-indigo-200 mt-2 font-light">从最早的实验到第一款商业游戏</h2>
+        </div>
+        
+        <!-- Main content -->
+        <div class="flex flex-row px-12 py-6 h-full">
+            <!-- Left timeline column -->
+            <div class="w-1/2 pr-8">
+                <div class="space-y-5 mt-3">
+                    <div class="timeline-item">
+                        <div class="text-indigo-100 font-semibold">1947</div>
+                        <div class="text-blue-200">Thomas T. Goldsmith Jr. 和 Estle Ray Mann 发明了"阴极射线管娱乐装置"，这是最早的交互式电子游戏尝试</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="text-indigo-100 font-semibold">1952</div>
+                        <div class="text-blue-200">剑桥大学的 A.S. Douglas 开发出了"井字游戏"（OXO），运行在 EDSAC 计算机上</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="text-indigo-100 font-semibold">1958</div>
+                        <div class="text-blue-200">William Higinbotham 在布鲁克海文国家实验室创造了"双人网球"（Tennis for Two），使用示波器显示</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="text-indigo-100 font-semibold">1962</div>
+                        <div class="text-blue-200">Steve Russell 在麻省理工学院开发了"太空大战"（Spacewar!），这是首个广泛传播的电脑游戏</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="text-indigo-100 font-semibold">1967</div>
+                        <div class="text-blue-200">Ralph Baer 开发了"棕色盒子"（Brown Box）原型，后来成为第一台家用游戏机 Magnavox Odyssey</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="text-indigo-100 font-semibold">1970</div>
+                        <div class="text-blue-200">Nolan Bushnell 创造了"电脑空间"（Computer Space），这是第一款投放市场的商业街机游戏</div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 text-indigo-200 bg-indigo-900 bg-opacity-50 p-4 rounded-lg">
+                    <div class="font-bold mb-2">早期电子游戏的特点:</div>
+                    <ul class="list-disc pl-5 space-y-1 text-sm">
+                        <li>大多是实验性质，由科研人员或爱好者开发</li>
+                        <li>硬件条件有限，通常依赖于大型计算机或示波器</li>
+                        <li>游戏概念简单，多是模拟物理现象或简单规则</li>
+                        <li>尚未形成商业模式，主要用于科学展示或娱乐</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Right images column -->
+            <div class="w-1/2 flex flex-col justify-center items-center">
+                <div class="crt-effect w-full flex flex-col items-center">
+                    <!-- Tennis for Two -->
+                    <div class="relative mb-6 pixel-border">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Tennis_For_Two_on_a_DuMont_Lab_Oscilloscope_Type_304-A.jpg" alt="Tennis for Two (1958)" class="w-80 h-56 object-cover rounded">
+                        <div class="absolute bottom-0 left-0 right-0 bg-indigo-900 bg-opacity-80 text-xs text-center text-indigo-200 p-1">
+                            Tennis for Two (1958) - 首个带有视觉显示的互动游戏
+                        </div>
+                    </div>
+                    
+                    <!-- Spacewar -->
+                    <div class="relative mb-6 pixel-border">
+                        <img src="https://www.masswerk.at/spacewar/images/spacewar-screenshot-1.png" alt="Spacewar! (1962)" class="w-80 h-56 object-cover rounded">
+                        <div class="absolute bottom-0 left-0 right-0 bg-indigo-900 bg-opacity-80 text-xs text-center text-indigo-200 p-1">
+                            Spacewar! (1962) - MIT 学生创造的首个影响广泛的电脑游戏
+                        </div>
+                    </div>
+                    
+                    <!-- Brown Box -->
+                    <div class="relative pixel-border">
+                        <img src="https://americanhistory.si.edu/sites/default/files/styles/featured_image/public/brownbox_0.jpg" alt="Brown Box (1967)" class="w-80 h-56 object-cover rounded">
+                        <div class="absolute bottom-0 left-0 right-0 bg-indigo-900 bg-opacity-80 text-xs text-center text-indigo-200 p-1">
+                            Brown Box (1967) - 首款家用游戏机的原型
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Page indicator -->
+        <div class="absolute bottom-4 right-4 text-white text-opacity-70 font-mono">
+            3 / 17
+        </div>
+    </div>
+</body>
+</html>

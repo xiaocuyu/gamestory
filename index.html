@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电子游戏发展史 - 从实验室到全球文化</title>
+    <link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+                
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pixel-border {
+            box-shadow: 0 0 0 3px #4c1d95, 
+                        0 0 0 6px #5b21b6, 
+                        0 0 0 9px #6d28d9, 
+                        0 0 0 12px #7c3aed;
+        }
+        
+        .pixel-text {
+            font-family: 'Press Start 2P', cursive;
+            text-shadow: 3px 3px 0 #4c1d95;
+        }
+        
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(124, 58, 237, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(124, 58, 237, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        .game-icon {
+            position: absolute;
+            opacity: 0.8;
+            filter: drop-shadow(0 0 5px rgba(124, 58, 237, 0.5));
+        }
+        
+        .controller {
+            position: absolute;
+            bottom: 30px;
+            right: 50px;
+            width: 150px;
+            height: 150px;
+            background-image: url('./res/1f3ae.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.8;
+            transform: rotate(15deg);
+        }
+        
+        .pacman {
+            position: absolute;
+            top: 80px;
+            left: 60px;
+            width: 80px;
+            height: 80px;
+            background-image: url('./res/1f47e.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.7;
+            transform: rotate(-20deg);
+        }
+        
+        .tetris {
+            position: absolute;
+            top: 500px;
+            left: 100px;
+            width: 90px;
+            height: 90px;
+            background-image: url('./res/1f0cf.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.7;
+            transform: rotate(10deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-900">
+    <div class="slide-container bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 grid-pattern flex flex-col items-center justify-center">
+        <div class="pacman"></div>
+        <div class="tetris"></div>
+        <div class="controller"></div>
+        
+        <!-- Pixelated decorative elements -->
+        <div class="absolute top-0 left-0 w-full h-8 bg-gradient-to-r from-blue-600 to-purple-600"></div>
+        <div class="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-r from-purple-600 to-blue-600"></div>
+        
+        <!-- Main content -->
+        <div class="z-10 text-center px-10 py-16 bg-opacity-80 rounded-xl transform animate-pulse" style="animation-duration: 8s;">
+            <h1 class="pixel-text text-5xl mb-6 text-blue-300 tracking-wider">电子游戏发展史</h1>
+            
+            <div class="w-3/4 h-2 mx-auto my-8 bg-gradient-to-r from-blue-400 via-purple-500 to-blue-400 rounded-full pixel-border"></div>
+            
+            <h2 class="text-3xl text-indigo-200 mt-6 mb-8 font-bold tracking-wide">从实验室到全球文化</h2>
+            
+            <!-- Pixelated controller icons -->
+            <div class="flex justify-center mt-12 space-x-8">
+                <div class="w-16 h-16 bg-blue-500 rounded-lg transform rotate-45"></div>
+                <div class="w-16 h-16 bg-purple-500 rounded-full"></div>
+                <div class="w-16 h-16 bg-indigo-500 rounded-lg transform -rotate-45"></div>
+            </div>
+        </div>
+        
+        <!-- Page indicator -->
+        <div class="absolute bottom-4 right-4 text-white text-opacity-70 font-mono">
+            1 / 17
+        </div>
+    </div>
+</body>
+</html>

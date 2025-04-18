@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电子游戏发展史 - 目录</title>
+    <link href="./res/tailwind.min.css" rel="stylesheet">
+    <link href="./res/fontawesome-all.min.css" rel="stylesheet">
+    <link href="./res/css2.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pixel-text {
+            font-family: 'Press Start 2P', cursive;
+            text-shadow: 2px 2px 0 #4c1d95;
+        }
+        
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(124, 58, 237, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(124, 58, 237, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        .toc-item {
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 2.5rem;
+            cursor: pointer;
+        }
+        
+        .toc-item::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+            background-image: url('https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f3ae.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .toc-item:hover {
+            transform: translateX(10px);
+            color: #8be9fd;
+        }
+        
+        .toc-item:hover::before {
+            opacity: 1;
+        }
+        
+        .pixel-border {
+            box-shadow: 0 0 0 2px #4c1d95, 
+                        0 0 0 4px #5b21b6;
+            border-radius: 4px;
+        }
+        
+        .animated-controller {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(10deg); }
+            50% { transform: translateY(-15px) rotate(15deg); }
+            100% { transform: translateY(0px) rotate(10deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-900">
+    <div class="slide-container bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 grid-pattern flex">
+        <!-- Left TOC area -->
+        <div class="w-8/12 p-10 flex flex-col justify-center space-y-1">
+            <h1 class="pixel-text text-3xl mb-8 text-blue-300">目录</h1>
+            
+            <div class="w-full h-1 bg-gradient-to-r from-blue-400 via-purple-500 to-blue-400 mb-8"></div>
+            
+            <div class="space-y-3 mt-4 text-lg">
+                <div class="toc-item text-indigo-100">1. 电子游戏的起源（1947-1970）：从最早的实验到第一款商业游戏</div>
+                <div class="toc-item text-indigo-100">2. 街机与家用游戏机的诞生（1970-1983）：雅达利与第一次游戏革命</div>
+                <div class="toc-item text-indigo-100">3. 日本崛起与游戏复兴（1983-1990）：任天堂时代的开始</div>
+                <div class="toc-item text-indigo-100">4. 16位时代和3D革命（1990-1995）：世嘉与任天堂的竞争</div>
+                <div class="toc-item text-indigo-100">5. 索尼的加入与3D时代（1995-2000）：PlayStation的影响</div>
+                <div class="toc-item text-indigo-100">6. 微软入局与三国鼎立（2001-2005）：Xbox的登场</div>
+                <div class="toc-item text-indigo-100">7. 高清时代与互联网游戏（2006-2013）：在线游戏的兴起</div>
+                <div class="toc-item text-indigo-100">8. 移动游戏革命（2007-2015）：智能手机改变游戏格局</div>
+                <div class="toc-item text-indigo-100">9. 当代游戏产业（2015至今）：VR/AR、云游戏与新趋势</div>
+                <div class="toc-item text-indigo-100">10. 电子游戏的社会影响与文化地位</div>
+                <div class="toc-item text-indigo-100">11. 游戏技术的演进：从像素到实时光线追踪</div>
+                <div class="toc-item text-indigo-100">12. 中国游戏产业的发展历程</div>
+                <div class="toc-item text-indigo-100">13. 电子游戏的未来趋势</div>
+                <div class="toc-item text-indigo-100">14. 总结与思考</div>
+                <div class="toc-item text-indigo-100">15. 参考资料与致谢</div>
+            </div>
+        </div>
+        
+        <!-- Right decoration area -->
+        <div class="w-4/12 relative flex items-center justify-center">
+            <!-- Decorative elements -->
+            <div class="animated-controller absolute right-16 top-32">
+                <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f3ae.svg" class="w-28 h-28 opacity-70">
+            </div>
+            
+            <div class="absolute right-24 top-64">
+                <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f579.svg" class="w-20 h-20 opacity-60">
+            </div>
+            
+            <div class="absolute right-12 bottom-32">
+                <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f47e.svg" class="w-24 h-24 opacity-70">
+            </div>
+            
+            <!-- Pixelated decorative boxes -->
+            <div class="absolute top-40 right-48 w-10 h-10 bg-blue-500 rounded opacity-40"></div>
+            <div class="absolute bottom-56 right-40 w-8 h-8 bg-purple-500 rounded opacity-40"></div>
+            <div class="absolute bottom-36 right-56 w-12 h-12 bg-indigo-400 rounded opacity-30"></div>
+            
+            <!-- Background tech circuit pattern -->
+            <div class="absolute inset-0 opacity-10">
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <pattern id="circuit" width="100" height="100" patternUnits="userSpaceOnUse">
+                        <path d="M0 50 L100 50 M50 0 L50 100" stroke="#8be9fd" stroke-width="2"/>
+                        <circle cx="50" cy="50" r="8" fill="#bd93f9"/>
+                    </pattern>
+                    <rect width="100%" height="100%" fill="url(#circuit)"/>
+                </svg>
+            </div>
+        </div>
+        
+        <!-- Page indicator -->
+        <div class="absolute bottom-4 right-4 text-white text-opacity-70 font-mono">
+            2 / 17
+        </div>
+    </div>
+</body>
+</html>
