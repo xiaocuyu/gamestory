@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>参考资料与致谢</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pixel-text {
+            font-family: 'Press Start 2P', cursive;
+            text-shadow: 2px 2px 0 #4c1d95;
+        }
+        
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(124, 58, 237, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(124, 58, 237, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        .ref-item {
+            position: relative;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            border-left: 3px solid #8b5cf6;
+        }
+        
+        .ref-item:hover {
+            transform: translateX(5px);
+            background-color: rgba(139, 92, 246, 0.2);
+        }
+        
+        .pixel-border {
+            box-shadow: 0 0 0 2px #4c1d95, 
+                        0 0 0 4px #5b21b6;
+            border-radius: 4px;
+        }
+        
+        .pixel-decoration {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #8be9fd;
+            opacity: 0.4;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        
+        .float-animation {
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .thanks-icon {
+            opacity: 0.2;
+            position: absolute;
+            background-size: contain;
+            background-repeat: no-repeat;
+            filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.5));
+        }
+        
+        .icon-joystick {
+            width: 120px;
+            height: 120px;
+            right: 50px;
+            bottom: 80px;
+            transform: rotate(15deg);
+            background-image: url('https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f3ae.svg');
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .icon-cd {
+            width: 80px;
+            height: 80px;
+            left: 70px;
+            bottom: 100px;
+            transform: rotate(-10deg);
+            background-image: url('https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4bf.svg');
+            animation: float 6s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+        
+        .icon-game {
+            width: 90px;
+            height: 90px;
+            right: 150px;
+            top: 100px;
+            transform: rotate(5deg);
+            background-image: url('https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f47e.svg');
+            animation: float 7s ease-in-out infinite;
+            animation-delay: 0.5s;
+        }
+        
+        .thanks-text {
+            position: relative;
+        }
+        
+        .thanks-text::before {
+            content: "";
+            position: absolute;
+            left: -20px;
+            top: -20px;
+            font-size: 60px;
+            color: rgba(139, 92, 246, 0.3);
+            font-family: serif;
+        }
+        
+        .thanks-text::after {
+            content: "";
+            position: absolute;
+            right: -20px;
+            bottom: -40px;
+            font-size: 60px;
+            color: rgba(139, 92, 246, 0.3);
+            font-family: serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-900">
+    <div class="slide-container bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 grid-pattern">
+        <!-- Pixel decorations -->
+        <div class="pixel-decoration" style="top: 150px; right: 180px;"></div>
+        <div class="pixel-decoration" style="top: 165px; right: 195px;"></div>
+        <div class="pixel-decoration" style="top: 150px; right: 210px;"></div>
+        
+        <div class="pixel-decoration" style="bottom: 180px; left: 150px;"></div>
+        <div class="pixel-decoration" style="bottom: 195px; left: 165px;"></div>
+        <div class="pixel-decoration" style="bottom: 180px; left: 180px;"></div>
+        
+        <!-- Decorative icons -->
+        <div class="thanks-icon icon-joystick"></div>
+        <div class="thanks-icon icon-cd"></div>
+        <div class="thanks-icon icon-game"></div>
+        
+        <!-- Header -->
+        <div class="px-12 pt-8">
+            <h1 class="pixel-text text-2xl text-blue-300 mb-2">参考资料与致谢</h1>
+            <div class="w-full h-1 bg-gradient-to-r from-blue-400 via-purple-500 to-blue-400"></div>
+            <h2 class="text-xl text-indigo-200 mt-2 font-light">本次分享的信息来源与贡献者</h2>
+        </div>
+        
+        <!-- Main content -->
+        <div class="px-12 py-6 flex">
+            <!-- Left column: References -->
+            <div class="w-1/2 pr-6">
+                <h3 class="text-blue-300 font-bold mb-4">主要参考资料</h3>
+                
+                <div class="space-y-3">
+                    <div class="ref-item pl-3 py-1 text-sm text-indigo-100">
+                        <div class="font-semibold text-blue-200">《电子游戏简史》- 特里斯坦·多诺万</div>
+                        <div class="text-xs text-indigo-300">MIT出版社，2010年版</div>
+                    </div>
+                    
+                    <div class="ref-item pl-3 py-1 text-sm text-indigo-100">
+                        <div class="font-semibold text-blue-200">《重开（RESET）：游戏如何改变文化》- 史蒂文·肯特</div>
+                        <div class="text-xs text-indigo-300">哈勃尔出版集团，2021年版</div>
+                    </div>
+                    
+                    <div class="ref-item pl-3 py-1 text-sm text-indigo-100">
+                        <div class="font-semibold text-blue-200">《权力游戏：任天堂的故事》- 大卫·谢夫</div>
+                        <div class="text-xs text-indigo-300">企鹅兰登书屋，2011年版</div>
+                    </div>
+                    
+                    <div class="ref-item pl-3 py-1 text-sm text-indigo-100">
+                        <div class="font-semibold text-blue-200">《游戏引擎架构》- 杰森·格雷戈里</div>
+                        <div class="text-xs text-indigo-300">CRC出版社，2018年第二版</div>
+                    </div>
+                    
+                    <div class="ref-item pl-3 py-1 text-sm text-indigo-100">
+                        <div class="font-semibold text-blue-200">《点击重启：雅达利、任天堂和重新定义现代游戏的战斗》</div>
+                        <div class="text-xs text-indigo-300">三联书店，2013年中文版</div>
+                    </div>
+                </div>
+                
+                <h3 class="text-blue-300 font-bold mt-6 mb-4">在线资源</h3>
+                
+                <div class="space-y-3">
+                    <div class="ref-item pl-3 py-1 text-sm text-indigo-100">
+                        <div class="font-semibold text-blue-200">互联网游戏档案馆 (Internet Archive Game Collection)</div>
+                        <div class="text-xs text-indigo-300">https://archive.org/details/game</div>
+                    </div>
+                    
+                    <div class="ref-item pl-3 py-1 text-sm text-indigo-100">
+                        <div class="font-semibold text-blue-200">游戏历史基金会 (Video Game History Foundation)</div>
+                        <div class="text-xs text-indigo-300">https://gamehistory.org</div>
+                    </div>
+                    
+                    <div class="ref-item pl-3 py-1 text-sm text-indigo-100">
+                        <div class="font-semibold text-blue-200">MoMA电子游戏藏品</div>
+                        <div class="text-xs text-indigo-300">https://www.moma.org/collection/videogames</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right column: Acknowledgments -->
+            <div class="w-1/2 pl-6">
+                <h3 class="text-blue-300 font-bold mb-4">感谢名单</h3>
+                
+                <div class="bg-indigo-900 bg-opacity-40 p-4 rounded-lg pixel-border mb-6">
+                    <ul class="text-sm text-indigo-100 space-y-2">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-purple-400 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>各大游戏开发者与技术先驱，他们的创新与坚持推动了电子游戏的发展</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-purple-400 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>游戏历史学者与研究机构，为保存电子游戏历史资料做出的贡献</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-purple-400 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>游戏媒体平台与内容创作者，持续报道与分析电子游戏产业动态</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-purple-400 mr-2 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>各位分享经验与观点的游戏开发者、设计师与艺术家</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="pixel-border bg-indigo-800 bg-opacity-50 p-4 rounded-lg">
+                    <h3 class="text-blue-300 font-bold text-sm mb-3">图片与视觉资料来源</h3>
+                    <div class="text-xs text-indigo-100 space-y-1">
+                        <div>• 互联网游戏档案馆 (Internet Archive)</div>
+                        <div>• 游戏历史基金会 (Video Game History Foundation)</div>
+                        <div>• 各游戏公司官方网站与宣传材料</div>
+                        <div>• 游戏历史博物馆与展览收藏</div>
+                        <div>• Strong博物馆电子游戏历史中心</div>
+                        <div>• 知识共享许可下的开放资源</div>
+                    </div>
+                </div>
+                
+                <div class="thanks-text bg-indigo-900 bg-opacity-20 p-4 mt-6 rounded-lg border border-indigo-700 relative">
+                    <p class="text-sm text-indigo-100 relative z-10">
+                        特别感谢所有热爱游戏的玩家，正是你们的支持与热情，让电子游戏从实验室的好奇项目发展为今天全球最具影响力的文化形式之一。
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Page indicator -->
+        <div class="absolute bottom-4 right-4 text-white text-opacity-70 font-mono">
+            16 / 17
+        </div>
+        <div class="absolute bottom-0 left-4 flex space-x-4">
+            <button onclick="window.location.href='page15.html'" class="bg-purple-700 hover:bg-purple-800 text-white font-bold py-2 px-4 rounded-lg opacity-90 transition">
+                上一页
+            </button>
+            <button onclick="window.location.href='page17.html'" class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-lg opacity-90 transition">
+                下一页
+            </button>
+        </div>
+    </div>
+</body>
+</html>

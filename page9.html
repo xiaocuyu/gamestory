@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>当代游戏产业（2015至今）</title>
-    <link href="./res/tailwind.min.css" rel="stylesheet">
-    <link href="./res/css2.css" rel="stylesheet">
+    <title>游戏主机与游戏革新（2006-2020）</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
@@ -34,44 +34,49 @@
             background-size: 20px 20px;
         }
         
-        .tech-card {
-            transition: all 0.3s ease;
-            overflow: hidden;
+        .timeline-item {
             position: relative;
+            padding-left: 32px;
+            margin-bottom: 12px;
         }
         
-        .tech-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px -5px rgba(139, 233, 253, 0.4);
-        }
-        
-        .tech-card::after {
+        .timeline-item::before {
             content: "";
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(
-                to bottom right,
-                rgba(139, 233, 253, 0) 0%,
-                rgba(139, 233, 253, 0.4) 50%,
-                rgba(139, 233, 253, 0) 100%
-            );
-            transform: rotate(45deg);
-            transition: all 0.8s ease;
-            opacity: 0;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            background-color: #8be9fd;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(139, 233, 253, 0.3);
         }
         
-        .tech-card:hover::after {
-            opacity: 1;
-            transform: rotate(45deg) translate(50%, 50%);
+        .timeline-item::after {
+            content: "";
+            position: absolute;
+            left: 8px;
+            top: 50%;
+            width: 24px;
+            height: 2px;
+            background-color: #8be9fd;
+            transform: translateY(-50%);
         }
         
         .pixel-border {
             box-shadow: 0 0 0 2px #4c1d95, 
                         0 0 0 4px #5b21b6;
             border-radius: 4px;
+        }
+        
+        .console-card {
+            transition: all 0.3s ease;
+        }
+        
+        .console-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(139, 233, 253, 0.4);
         }
         
         .feature-item {
@@ -92,190 +97,223 @@
             clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
         }
         
-        .float-animation {
-            animation: float 6s ease-in-out infinite;
+        .era-divider {
+            height: 4px;
+            background: linear-gradient(to right, #4f46e5, #7c3aed, #8b5cf6);
+            margin: 16px 0;
+            position: relative;
         }
         
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
+        .era-marker {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #4c1d95;
+            color: #8be9fd;
+            font-weight: bold;
+            padding: 4px 12px;
+            border-radius: 4px;
+            box-shadow: 0 0 8px rgba(139, 233, 253, 0.6);
         }
         
-        .glow-effect {
-            filter: drop-shadow(0 0 8px rgba(139, 233, 253, 0.7));
+        .pixel-decoration {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #8be9fd;
+            opacity: 0.6;
         }
     </style>
 </head>
 <body class="bg-gray-900">
     <div class="slide-container bg-gradient-to-br from-indigo-900 via-purple-900 to-blue-900 grid-pattern">
+        <!-- Pixel decorations -->
+        <div class="pixel-decoration" style="top: 30px; right: 120px;"></div>
+        <div class="pixel-decoration" style="top: 50px; right: 140px;"></div>
+        <div class="pixel-decoration" style="top: 30px; right: 160px;"></div>
+        <div class="pixel-decoration" style="bottom: 40px; left: 120px;"></div>
+        <div class="pixel-decoration" style="bottom: 60px; left: 140px;"></div>
+        <div class="pixel-decoration" style="bottom: 40px; left: 160px;"></div>
+        
         <!-- Header -->
         <div class="px-12 pt-8">
-            <h1 class="pixel-text text-2xl text-blue-300 mb-2">当代游戏产业（2015至今）</h1>
+            <h1 class="pixel-text text-2xl text-blue-300 mb-2">游戏主机与游戏革新（2006-2020）</h1>
             <div class="w-full h-1 bg-gradient-to-r from-blue-400 via-purple-500 to-blue-400"></div>
-            <h2 class="text-xl text-indigo-200 mt-2 font-light">VR/AR、云游戏与新趋势</h2>
+            <h2 class="text-xl text-indigo-200 mt-2 font-light">第七世代与第八世代主机的黄金时期</h2>
         </div>
         
         <!-- Main content -->
-        <div class="flex px-12 py-6">
-            <!-- Left column: Technologies -->
-            <div class="w-1/2 pr-6">
-                <div class="grid grid-cols-2 gap-4 mb-4">
-                    <!-- VR Gaming -->
-                    <div class="tech-card pixel-border bg-indigo-800 bg-opacity-70 p-3 rounded-lg">
-                        <div class="flex items-center mb-2">
-                            <svg class="w-8 h-8 text-blue-300 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M13 2.05V4c3.39.54 6 3.44 6 6.95 0 3.87-3.13 7-7 7s-7-3.13-7-7c0-3.51 2.61-6.41 6-6.95V2.05C5.85 2.6 2 6.76 2 11.95 2 17.47 6.53 22 12 22s10-4.53 10-10.95c0-5.19-3.85-9.35-9-9.95z"></path>
-                                <path d="M15 11l-1.41-1.41L12 11.17V7h-1v4.17l-1.59-1.59L8 11l4 4 4-4z"></path>
-                            </svg>
-                            <h3 class="text-blue-300 font-bold">虚拟现实 (VR)</h3>
-                        </div>
-                        <ul class="text-xs text-indigo-100 space-y-1">
-                            <li>• Oculus Quest 2 带来无线VR体验</li>
-                            <li>• PlayStation VR拓展主机游戏边界</li>
-                            <li>• 《Half-Life: Alyx》树立VR游戏新标杆</li>
-                            <li>• VR社交平台如《VRChat》崛起</li>
-                        </ul>
-                    </div>
-                    
-                    <!-- AR Gaming -->
-                    <div class="tech-card pixel-border bg-indigo-800 bg-opacity-70 p-3 rounded-lg">
-                        <div class="flex items-center mb-2">
-                            <svg class="w-8 h-8 text-indigo-300 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M9.5 6.5v3h-3v-3h3M11 5H5v6h6V5zm-1.5 9.5v3h-3v-3h3M11 13H5v6h6v-6zm6.5-6.5v3h-3v-3h3M19 5h-6v6h6V5zm-6 8h1.5v1.5H13V13zm1.5 1.5H16V16h-1.5v-1.5zM16 13h1.5v1.5H16V13zm-3 3h1.5v1.5H13V16zm1.5 1.5H16V19h-1.5v-1.5zM16 16h1.5v1.5H16V16zm1.5-1.5H19V16h-1.5v-1.5zm0 3H19V19h-1.5v-1.5zM22 7h-2V4h-3V2h5v5zm0 15v-5h-2v3h-3v2h5zM2 22h5v-2H4v-3H2v5zM2 2v5h2V4h3V2H2z"></path>
-                            </svg>
-                            <h3 class="text-indigo-300 font-bold">增强现实 (AR)</h3>
-                        </div>
-                        <ul class="text-xs text-indigo-100 space-y-1">
-                            <li>• 《Pokemon GO》引爆AR游戏热潮</li>
-                            <li>• Apple/Google AR开发框架普及</li>
-                            <li>• Microsoft HoloLens探索混合现实</li>
-                            <li>• AR游戏与现实世界无缝融合</li>
-                        </ul>
-                    </div>
-                    
-                    <!-- Cloud Gaming -->
-                    <div class="tech-card pixel-border bg-indigo-800 bg-opacity-70 p-3 rounded-lg">
-                        <div class="flex items-center mb-2">
-                            <svg class="w-8 h-8 text-purple-300 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM19 18H6c-2.21 0-4-1.79-4-4 0-2.05 1.53-3.76 3.56-3.97l1.07-.11.5-.95C8.08 7.14 9.94 6 12 6c2.62 0 4.88 1.86 5.39 4.43l.3 1.5 1.53.11c1.56.1 2.78 1.41 2.78 2.96 0 1.65-1.35 3-3 3z"></path>
-                            </svg>
-                            <h3 class="text-purple-300 font-bold">云游戏</h3>
-                        </div>
-                        <ul class="text-xs text-indigo-100 space-y-1">
-                            <li>• Google Stadia、Xbox Cloud Gaming启动</li>
-                            <li>• NVIDIA GeForce Now提供PC游戏串流</li>
-                            <li>• 5G网络为云游戏提供基础设施</li>
-                            <li>• 突破硬件限制，任何设备皆可游戏</li>
-                        </ul>
-                    </div>
-                    
-                    <!-- AI in Games -->
-                    <div class="tech-card pixel-border bg-indigo-800 bg-opacity-70 p-3 rounded-lg">
-                        <div class="flex items-center mb-2">
-                            <svg class="w-8 h-8 text-blue-300 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M21 11c0-.55-.45-1-1-1h-1V7l-2.29-2.29c-.39-.39-1.02-.39-1.41 0L14 6l-1.29-1.29c-.39-.39-1.02-.39-1.41 0L10 6 8.71 4.71c-.39-.39-1.02-.39-1.41 0L5 7v3H4c-.55 0-1 .45-1 1s.45 1 1 1h1v2c0 2.21 1.79 4 4 4h.14l-1.79 1.79c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L12 18.34l3.24 3.24c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L14.86 18H15c2.21 0 4-1.79 4-4v-2h1c.55 0 1-.45 1-1z"></path>
-                            </svg>
-                            <h3 class="text-blue-300 font-bold">人工智能与游戏</h3>
-                        </div>
-                        <ul class="text-xs text-indigo-100 space-y-1">
-                            <li>• AI驱动的NPC行为与叙事</li>
-                            <li>• 程序化内容生成扩展游戏世界</li>
-                            <li>• 自适应难度与个性化体验</li>
-                            <li>• 生成式AI辅助游戏开发</li>
-                        </ul>
-                    </div>
+        <div class="px-12 py-4">
+            <!-- Seventh Generation (2006-2013) -->
+            <div class="relative mb-6">
+                <div class="era-divider">
+                    <div class="era-marker" style="left: 10%;">2006</div>
+                    <div class="era-marker" style="left: 50%;">第七世代主机（2006-2013）</div>
+                    <div class="era-marker" style="left: 90%;">2013</div>
                 </div>
                 
-                <!-- Industry Transformation -->
-                <div class="bg-blue-900 bg-opacity-30 p-3 rounded-lg pixel-border">
-                    <h3 class="text-blue-300 font-bold mb-2">产业变革</h3>
-                    <div class="grid grid-cols-2 gap-x-4 gap-y-2">
-                        <div class="feature-item text-xs text-indigo-100">
-                            订阅服务模式兴起 (Game Pass, PS Plus)
+                <div class="flex mt-4">
+                    <!-- Left column: Console information -->
+                    <div class="w-1/2 pr-4">
+                        <div class="grid grid-cols-3 gap-3 mb-4">
+                            <!-- PS3 -->
+                            <div class="console-card pixel-border bg-indigo-800 bg-opacity-70 p-2 rounded-lg">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/PS3Slim-Console-Vertical.jpg/1200px-PS3Slim-Console-Vertical.jpg" alt="PlayStation 3" class="w-full h-24 object-cover rounded-lg mb-1">
+                                <div class="text-xs text-center text-blue-300 font-bold">PlayStation 3</div>
+                                <div class="text-xs text-indigo-200">蓝光技术, Cell处理器</div>
+                            </div>
+                            
+                            <!-- Xbox 360 -->
+                            <div class="console-card pixel-border bg-indigo-800 bg-opacity-70 p-2 rounded-lg">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Xbox-360-Slim-Console-Set.jpg/1200px-Xbox-360-Slim-Console-Set.jpg" alt="Xbox 360" class="w-full h-24 object-cover rounded-lg mb-1">
+                                <div class="text-xs text-center text-green-300 font-bold">Xbox 360</div>
+                                <div class="text-xs text-indigo-200">Xbox Live服务革新</div>
+                            </div>
+                            
+                            <!-- Nintendo Wii -->
+                            <div class="console-card pixel-border bg-indigo-800 bg-opacity-70 p-2 rounded-lg">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Wii-console.jpg/1200px-Wii-console.jpg" alt="Nintendo Wii" class="w-full h-24 object-cover rounded-lg mb-1">
+                                <div class="text-xs text-center text-red-300 font-bold">Nintendo Wii</div>
+                                <div class="text-xs text-indigo-200">体感控制革命</div>
+                            </div>
                         </div>
-                        <div class="feature-item text-xs text-indigo-100">
-                            直播与电竞成为主流文化
+                        
+                        <div class="bg-indigo-900 bg-opacity-40 p-3 rounded-lg pixel-border mb-2">
+                            <h3 class="text-blue-300 text-sm font-bold mb-2">第七世代主要革新：</h3>
+                            <div class="grid grid-cols-2 gap-x-3 gap-y-1">
+                                <div class="feature-item text-xs text-indigo-100">高清游戏时代开始</div>
+                                <div class="feature-item text-xs text-indigo-100">在线服务成熟</div>
+                                <div class="feature-item text-xs text-indigo-100">体感控制普及</div>
+                                <div class="feature-item text-xs text-indigo-100">数字分发起步</div>
+                            </div>
                         </div>
-                        <div class="feature-item text-xs text-indigo-100">
-                            独立游戏爆发式增长
+                        
+                        <div class="text-xs text-indigo-200 bg-blue-900 bg-opacity-30 p-2 rounded">
+                            <p>这一时期见证了高清游戏的兴起，主机性能大幅提升，游戏图形质量迈入全新阶段。同时，Xbox Live的成功推动了在线游戏服务的标准化。任天堂Wii凭借创新的体感控制吸引了大量休闲玩家，拓展了游戏市场。</p>
                         </div>
-                        <div class="feature-item text-xs text-indigo-100">
-                            跨平台游戏成为标准
-                        </div>
-                        <div class="feature-item text-xs text-indigo-100">
-                            游戏即服务(GaaS)商业模式
-                        </div>
-                        <div class="feature-item text-xs text-indigo-100">
-                            区块链与NFT游戏实验
+                    </div>
+                    
+                    <!-- Right column: Game highlights -->
+                    <div class="w-1/2 pl-4">
+                        <h3 class="text-blue-300 text-sm font-bold mb-2">标志性游戏作品：</h3>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="console-card pixel-border bg-indigo-800 bg-opacity-50 p-2 rounded-lg">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/5/5e/Uncharted_2_Among_Thieves_Game_Cover.jpg" alt="神秘海域2" class="w-full h-20 object-cover rounded-lg mb-1">
+                                <div class="text-xs text-center text-blue-300">神秘海域系列</div>
+                                <div class="text-xs text-indigo-200">电影化体验的典范</div>
+                            </div>
+                            
+                            <div class="console-card pixel-border bg-indigo-800 bg-opacity-50 p-2 rounded-lg">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/5/5c/Halo_4_box_artwork.png" alt="光环4" class="w-full h-20 object-cover rounded-lg mb-1">
+                                <div class="text-xs text-center text-green-300">光环系列</div>
+                                <div class="text-xs text-indigo-200">第一人称射击游戏革新</div>
+                            </div>
+                            
+                            <div class="console-card pixel-border bg-indigo-800 bg-opacity-50 p-2 rounded-lg">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/5/51/The_Last_of_Us_box_art.jpg" alt="最后生还者" class="w-full h-20 object-cover rounded-lg mb-1">
+                                <div class="text-xs text-center text-blue-300">最后生还者</div>
+                                <div class="text-xs text-indigo-200">叙事与情感的巅峰</div>
+                            </div>
+                            
+                            <div class="console-card pixel-border bg-indigo-800 bg-opacity-50 p-2 rounded-lg">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/5/53/Super_Mario_Galaxy_box_art.jpg" alt="超级马里奥银河" class="w-full h-20 object-cover rounded-lg mb-1">
+                                <div class="text-xs text-center text-red-300">超级马里奥银河</div>
+                                <div class="text-xs text-indigo-200">3D平台游戏的创新</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <!-- Right column: Visuals and Timeline -->
-            <div class="w-1/2 pl-6">
-                <!-- VR/AR Visualization -->
-                <div class="relative h-64 bg-indigo-900 bg-opacity-40 rounded-lg pixel-border mb-4 overflow-hidden">
-                    <img src="https://cdn.jsdelivr.net/gh/PixLabInc/images@main/vr-gaming.jpg" alt="VR游戏" class="w-full h-full object-cover opacity-70 rounded">
-                    <div class="absolute inset-0 bg-gradient-to-t from-indigo-900 via-transparent to-transparent"></div>
-                    
-                    <!-- Floating VR Elements -->
-                    <div class="absolute top-10 right-12 float-animation" style="animation-delay: 0.5s;">
-                        <svg class="w-14 h-14 text-blue-300 glow-effect" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20.74 4.96c-.24-.35-.57-.66-.94-.92L21 3c.34.04.68.1 1 .19V.5c0-.27-.22-.5-.5-.5h-19C2.22 0 2 .22 2 .5v2.69c.32-.09.66-.15 1-.19l1.21 1.04c-.38.26-.7.57-.95.92-1.14 1.7-.47 4.31 1.43 6.21.68.69 1.34 1.26 1.96 1.68.6.42 1.13.66 1.57.66h.36c.43 0 .97-.24 1.58-.65.61-.42 1.27-1 1.95-1.7 1.91-1.91 2.58-4.53 1.43-6.23-.24-.35-.57-.66-.94-.92L13 3c.18-.02.36-.03.54-.03.18 0 .36.01.54.03l1.21 1.04c-.38.26-.7.57-.95.92-1.14 1.7-.47 4.31 1.43 6.21.68.69 1.34 1.26 1.96 1.68.6.42 1.13.66 1.57.66h.36c.43 0 .97-.24 1.58-.65.61-.42 1.28-1.01 1.97-1.71 1.9-1.9 2.57-4.5 1.43-6.2zM8.85 10.47c-.29.29-.58.53-.88.7-.29.17-.55.23-.71.23h-.36c-.15 0-.41-.06-.7-.23-.29-.17-.59-.4-.88-.7-.65-.65-1.08-1.3-1.3-1.91-.2-.59-.2-1.11-.01-1.5.17-.36.47-.67.88-.88 0 0 .11-.07.3-.18l3.66 3.66zm10.5-1.21c-.19.59-.63 1.25-1.29 1.91-.29.29-.58.53-.87.7-.29.17-.55.23-.71.23h-.36c-.15 0-.41-.06-.7-.23-.29-.17-.59-.4-.88-.7-.65-.65-1.08-1.3-1.3-1.91-.2-.59-.2-1.11-.01-1.5.17-.36.47-.67.88-.88 0 0 .11-.07.3-.18l3.66 3.66c.07.19.12.38.15.58.03.2.02.4-.02.59z"></path>
-                        </svg>
-                    </div>
-                    
-                    <div class="absolute bottom-12 left-14 float-animation" style="animation-delay: 1.2s;">
-                        <svg class="w-12 h-12 text-purple-300 glow-effect" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M21 4H3a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm-10 7H8v3h3v3h2v-3h3v-3h-3V8h-2v3z"></path>
-                        </svg>
-                    </div>
-                    
-                    <div class="absolute bottom-32 right-24 float-animation" style="animation-delay: 0.8s;">
-                        <svg class="w-16 h-16 text-indigo-400 glow-effect opacity-70" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M4 6h18V4H4c-1.1 0-2 .9-2 2v11H0v3h14v-3H4V6zm19 2h-6c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h6c.55 0 1-.45 1-1V9c0-.55-.45-1-1-1zm-1 9h-4v-7h4v7z"></path>
-                        </svg>
-                    </div>
+            <!-- Eighth Generation (2013-2020) -->
+            <div class="relative">
+                <div class="era-divider">
+                    <div class="era-marker" style="left: 10%;">2013</div>
+                    <div class="era-marker" style="left: 50%;">第八世代主机（2013-2020）</div>
+                    <div class="era-marker" style="left: 90%;">2020</div>
                 </div>
                 
-                <!-- Key Games Timeline -->
-                <h3 class="text-blue-300 font-bold mb-2">当代标志性游戏</h3>
-                <div class="grid grid-cols-2 gap-3 mb-4">
-                    <div class="tech-card pixel-border bg-indigo-800 bg-opacity-70 p-2 rounded-lg overflow-hidden">
-                        <img src="https://cdn.jsdelivr.net/gh/PixLabInc/images@main/fortnite.jpg" alt="Fortnite" class="w-full h-28 object-cover rounded">
-                        <div class="text-xs text-center text-blue-300 mt-1 font-bold">《堡垒之夜》(2017)</div>
-                        <div class="text-xs text-indigo-200 px-1">变革多平台游戏及社交游戏体验</div>
+                <div class="flex mt-4">
+                    <!-- Left column: Console information -->
+                    <div class="w-1/2 pr-4">
+                        <div class="grid grid-cols-3 gap-3 mb-4">
+                            <!-- PS4 -->
+                            <div class="console-card pixel-border bg-indigo-800 bg-opacity-70 p-2 rounded-lg">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Sony_PlayStation_4_console_with_controller.jpg/1200px-Sony_PlayStation_4_console_with_controller.jpg" alt="PlayStation 4" class="w-full h-24 object-cover rounded-lg mb-1">
+                                <div class="text-xs text-center text-blue-300 font-bold">PlayStation 4</div>
+                                <div class="text-xs text-indigo-200">统一架构, 强化社交</div>
+                            </div>
+                            
+                            <!-- Xbox One -->
+                            <div class="console-card pixel-border bg-indigo-800 bg-opacity-70 p-2 rounded-lg">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Xbox-One-Console-Set.jpg/1200px-Xbox-One-Console-Set.jpg" alt="Xbox One" class="w-full h-24 object-cover rounded-lg mb-1">
+                                <div class="text-xs text-center text-green-300 font-bold">Xbox One</div>
+                                <div class="text-xs text-indigo-200">Game Pass订阅服务</div>
+                            </div>
+                            
+                            <!-- Nintendo Switch -->
+                            <div class="console-card pixel-border bg-indigo-800 bg-opacity-70 p-2 rounded-lg">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Nintendo-Switch-Console-Docked-wJoyConRB.jpg/1200px-Nintendo-Switch-Console-Docked-wJoyConRB.jpg" alt="Nintendo Switch" class="w-full h-24 object-cover rounded-lg mb-1">
+                                <div class="text-xs text-center text-red-300 font-bold">Nintendo Switch</div>
+                                <div class="text-xs text-indigo-200">家用/便携一体化设计</div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-indigo-900 bg-opacity-40 p-3 rounded-lg pixel-border mb-2">
+                            <h3 class="text-blue-300 text-sm font-bold mb-2">第八世代主要革新：</h3>
+                            <div class="grid grid-cols-2 gap-x-3 gap-y-1">
+                                <div class="feature-item text-xs text-indigo-100">4K游戏与HDR技术</div>
+                                <div class="feature-item text-xs text-indigo-100">游戏订阅服务普及</div>
+                                <div class="feature-item text-xs text-indigo-100">跨平台游戏标准化</div>
+                                <div class="feature-item text-xs text-indigo-100">实时光线追踪初步应用</div>
+                            </div>
+                        </div>
+                        
+                        <div class="text-xs text-indigo-200 bg-blue-900 bg-opacity-30 p-2 rounded">
+                            <p>第八世代见证了数字分发成为主流，游戏即服务(GaaS)模式兴起。多平台开发成为标准，独立游戏大量涌现并获得商业成功。Switch的成功证明了创新游戏体验比纯硬件性能更重要，改变了行业竞争思路。</p>
+                        </div>
                     </div>
                     
-                    <div class="tech-card pixel-border bg-indigo-800 bg-opacity-70 p-2 rounded-lg overflow-hidden">
-                        <img src="https://cdn.jsdelivr.net/gh/PixLabInc/images@main/zelda-botw.jpg" alt="Zelda: Breath of the Wild" class="w-full h-28 object-cover rounded">
-                        <div class="text-xs text-center text-blue-300 mt-1 font-bold">《塞尔达传说：旷野之息》(2017)</div>
-                        <div class="text-xs text-indigo-200 px-1">开放世界游戏设计的全新标杆</div>
-                    </div>
-                </div>
-                
-                <!-- Industry Numbers -->
-                <div class="bg-indigo-900 bg-opacity-50 p-3 rounded-lg pixel-border">
-                    <h3 class="text-blue-300 text-sm font-bold mb-2">游戏产业规模</h3>
-                    <div class="flex justify-between items-center">
-                        <div class="text-center">
-                            <div class="text-xl font-bold text-blue-300">3000亿+</div>
-                            <div class="text-xs text-indigo-200">美元市场规模(2023)</div>
+                    <!-- Right column: Game highlights and tech innovation -->
+                    <div class="w-1/2 pl-4">
+                        <h3 class="text-blue-300 text-sm font-bold mb-2">标志性游戏作品：</h3>
+                        <div class="grid grid-cols-2 gap-3 mb-4">
+                            <div class="console-card pixel-border bg-indigo-800 bg-opacity-50 p-2 rounded-lg">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/4/44/Red_Dead_Redemption_II.jpg" alt="荒野大镖客2" class="w-full h-20 object-cover rounded-lg mb-1">
+                                <div class="text-xs text-center text-yellow-200">荒野大镖客：救赎2</div>
+                                <div class="text-xs text-indigo-200">开放世界与叙事的巅峰</div>
+                            </div>
+                            
+                            <div class="console-card pixel-border bg-indigo-800 bg-opacity-50 p-2 rounded-lg">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/0/0c/Witcher_3_cover_art.jpg" alt="巫师3" class="w-full h-20 object-cover rounded-lg mb-1">
+                                <div class="text-xs text-center text-purple-300">巫师3：狂猎</div>
+                                <div class="text-xs text-indigo-200">角色扮演游戏的新标杆</div>
+                            </div>
+                            
+                            <div class="console-card pixel-border bg-indigo-800 bg-opacity-50 p-2 rounded-lg">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/c/c6/The_Legend_of_Zelda_Breath_of_the_Wild.jpg" alt="塞尔达传说：旷野之息" class="w-full h-20 object-cover rounded-lg mb-1">
+                                <div class="text-xs text-center text-green-200">塞尔达：旷野之息</div>
+                                <div class="text-xs text-indigo-200">开放世界设计的革命</div>
+                            </div>
+                            
+                            <div class="console-card pixel-border bg-indigo-800 bg-opacity-50 p-2 rounded-lg">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/5/56/God_of_War_4_cover.jpg" alt="战神4" class="w-full h-20 object-cover rounded-lg mb-1">
+                                <div class="text-xs text-center text-blue-300">战神 (2018)</div>
+                                <div class="text-xs text-indigo-200">经典IP的成功重塑</div>
+                            </div>
                         </div>
-                        <div class="text-center">
-                            <div class="text-xl font-bold text-purple-300">31亿+</div>
-                            <div class="text-xs text-indigo-200">全球游戏玩家</div>
+                        
+                        <div class="bg-indigo-900 bg-opacity-40 p-3 rounded-lg pixel-border">
+                            <h3 class="text-blue-300 text-sm font-bold mb-2">2006-2020技术与设计革新：</h3>
+                            <div class="grid grid-cols-2 gap-x-3 gap-y-1">
+                                <div class="feature-item text-xs text-indigo-100">物理渲染PBR技术普及</div>
+                                <div class="feature-item text-xs text-indigo-100">开放世界设计成熟</div>
+                                <div class="feature-item text-xs text-indigo-100">程序化内容生成</div>
+                                <div class="feature-item text-xs text-indigo-100">非线性叙事设计</div>
+                                <div class="feature-item text-xs text-indigo-100">云游戏技术起步</div>
+                                <div class="feature-item text-xs text-indigo-100">电子竞技主流化</div>
+                            </div>
                         </div>
-                        <div class="text-center">
-                            <div class="text-xl font-bold text-green-300">75%</div>
-                            <div class="text-xs text-indigo-200">移动游戏占比</div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-3 text-xs text-indigo-100">
-                        <p>当代游戏产业已成为全球最大的娱乐产业之一，超越电影和音乐产业的总和。游戏不再仅是娱乐方式，而是成为社交平台、创意表达媒介和元宇宙概念的重要载体。</p>
                     </div>
                 </div>
             </div>
@@ -283,9 +321,9 @@
         
         <!-- Page indicator -->
         <div class="absolute bottom-4 right-4 text-white text-opacity-70 font-mono">
-            9 / 12
+            9 / 17
         </div>
-        <div class="absolute bottom-4 left-4 flex space-x-4">
+        <div class="absolute bottom-0 left-4 flex space-x-4">
             <button onclick="window.location.href='page8.html'" class="bg-purple-700 hover:bg-purple-800 text-white font-bold py-2 px-4 rounded-lg opacity-90 transition">
                 上一页
             </button>
