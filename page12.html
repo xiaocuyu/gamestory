@@ -10,16 +10,16 @@
         body {
             margin: 0;
             padding: 0;
-            overflow: hidden;
+            overflow: auto;
             font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
         }
         
         .slide-container {
             width: 1280px;
-            min-height: 720px;
+            min-height: 1084px; /* 增加容器高度 */
             margin: 0 auto;
             position: relative;
-            overflow: hidden;
+            overflow: auto; /* 改为auto允许滚动 */
         }
         
         .pixel-text {
@@ -99,6 +99,7 @@
             left: 50%;
             top: 140px;
             bottom: 80px;
+            height: 840px; /* 增加时间线的高度 */
             width: 4px;
             background: linear-gradient(to bottom, #4f46e5, #7c3aed, #8b5cf6);
             transform: translateX(-50%);
@@ -163,77 +164,77 @@
         </div>
         <div class="timeline-content-right" style="top: 160px;">
             <div class="tech-card pixel-border bg-indigo-800 bg-opacity-70 rounded overflow-hidden">
-                <img src="./res/8bit.png" alt="8位元时代" class="w-full h-24 object-cover" style="image-rendering: pixelated;">
+                <img src="./res/8bit.png" alt="8位元时代" class="w-full h-40 object-cover" style="image-rendering: pixelated;">
             </div>
         </div>
-        
+
         <!-- 1990s: 16-bit Era -->
-        <div class="timeline-node" style="top: 250px;"></div>
-        <div class="timeline-content-right" style="top: 230px;">
+        <div class="timeline-node" style="top: 300px;"></div>
+        <div class="timeline-content-right" style="top: 280px;">
             <h3 class="text-blue-300 font-bold text-sm">1990年代：16位元时代</h3>
             <p class="text-xs text-indigo-100 mt-1">256色调色板，精致的2D精灵图像和滚动背景。Mode 7等技术创造伪3D效果。代表作品：《索尼克》、《街头霸王II》。</p>
         </div>
-        <div class="timeline-content-left" style="top: 230px;">
+        <div class="timeline-content-left" style="top: 280px;">
             <div class="tech-card pixel-border bg-indigo-800 bg-opacity-70 rounded overflow-hidden">
-                <img src="./res/16bit.png" alt="16位元时代" class="w-full h-24 object-cover">
+                <img src="./res/16bit.png" alt="16位元时代" class="w-full h-40 object-cover">
             </div>
         </div>
-        
+
         <!-- Late 1990s: Early 3D -->
-        <div class="timeline-node" style="top: 320px;"></div>
-        <div class="timeline-content-left" style="top: 300px;">
+        <div class="timeline-node" style="top: 420px;"></div>
+        <div class="timeline-content-left" style="top: 400px;">
             <h3 class="text-blue-300 font-bold text-sm">1990年代末：早期3D</h3>
             <p class="text-xs text-indigo-100 mt-1">多边形3D模型，纹理贴图，固定管线渲染。低分辨率，缺乏细节。代表作品：《古墓丽影》、《最终幻想VII》。</p>
         </div>
-        <div class="timeline-content-right" style="top: 300px;">
+        <div class="timeline-content-right" style="top: 400px;">
             <div class="tech-card pixel-border bg-indigo-800 bg-opacity-70 rounded overflow-hidden">
-                <img src="./res/early3d.png" alt="早期3D" class="w-full h-24 object-cover">
+                <img src="./res/early3d.png" alt="早期3D" class="w-full h-40 object-cover">
             </div>
         </div>
-        
+
         <!-- 2000s: Programmable Shaders -->
-        <div class="timeline-node" style="top: 390px;"></div>
-        <div class="timeline-content-right" style="top: 370px;">
+        <div class="timeline-node" style="top: 540px;"></div>
+        <div class="timeline-content-right" style="top: 520px;">
             <h3 class="text-blue-300 font-bold text-sm">2000年代：可编程着色器</h3>
             <p class="text-xs text-indigo-100 mt-1">着色器程序允许高级视觉效果，动态光照和阴影，复杂3D场景。代表作品：《半条命2》、《光环3》。</p>
         </div>
-        <div class="timeline-content-left" style="top: 370px;">
+        <div class="timeline-content-left" style="top: 520px;">
             <div class="tech-card pixel-border bg-indigo-800 bg-opacity-70 rounded overflow-hidden">
-                <img src="./res/shader.png" alt="着色器时代" class="w-full h-24 object-cover">
+                <img src="./res/shader.png" alt="着色器时代" class="w-full h-40 object-cover">
             </div>
         </div>
-        
+
         <!-- 2010s: HD Gaming -->
-        <div class="timeline-node" style="top: 460px;"></div>
-        <div class="timeline-content-left" style="top: 440px;">
+        <div class="timeline-node" style="top: 660px;"></div>
+        <div class="timeline-content-left" style="top: 640px;">
             <h3 class="text-blue-300 font-bold text-sm">2010年代：高清游戏</h3>
             <p class="text-xs text-indigo-100 mt-1">物理渲染系统、全局光照、毛发和流体模拟。1080p/4K分辨率成为标准。代表作品：《荒野大镖客2》、《神秘海域4》。</p>
         </div>
-        <div class="timeline-content-right" style="top: 440px;">
+        <div class="timeline-content-right" style="top: 640px;">
             <div class="tech-card pixel-border bg-indigo-800 bg-opacity-70 rounded overflow-hidden">
-                <img src="./res/hdgame.png" alt="高清游戏" class="w-full h-24 object-cover">
+                <img src="./res/hdgame.png" alt="高清游戏" class="w-full h-40 object-cover">
             </div>
         </div>
-        
+
         <!-- 2020s: Ray Tracing -->
-        <div class="timeline-node" style="top: 530px;"></div>
-        <div class="timeline-content-right" style="top: 510px;">
+        <div class="timeline-node" style="top: 780px;"></div>
+        <div class="timeline-content-right" style="top: 760px;">
             <h3 class="text-blue-300 font-bold text-sm">2020年代：实时光线追踪</h3>
             <p class="text-xs text-indigo-100 mt-1">基于物理的光线追踪，逼真的反射、散射和阴影，近乎电影级的视觉效果。代表作品：《控制》、《赛博朋克2077》。</p>
         </div>
-        <div class="timeline-content-left" style="top: 510px;">
+        <div class="timeline-content-left" style="top: 760px;">
             <div class="tech-card pixel-border bg-indigo-800 bg-opacity-70 rounded overflow-hidden">
-                <img src="./res/2077.png" alt="光线追踪" class="w-full h-24 object-cover">
+                <img src="./res/2077.png" alt="光线追踪" class="w-full h-40 object-cover">
             </div>
         </div>
         
         <!-- Future -->
-        <div class="timeline-node" style="top: 600px;"></div>
-        <div class="timeline-content-left" style="top: 580px;">
+        <div class="timeline-node" style="top: 900px;"></div>
+        <div class="timeline-content-left" style="top: 880px;">
             <h3 class="text-blue-300 font-bold text-sm">未来技术趋势</h3>
             <p class="text-xs text-indigo-100 mt-1">AI驱动的实时内容生成、全息显示、脑机接口、超逼真感官体验，技术与现实的界限将越来越模糊。</p>
         </div>
-        <div class="timeline-content-right" style="top: 580px;">
+        <div class="timeline-content-right" style="top: 880px;">
             <div class="tech-card pixel-border bg-indigo-800 bg-opacity-70 rounded overflow-hidden p-2">
                 <div class="flex justify-center items-center h-20 bg-indigo-900 bg-opacity-50 rounded">
                     <div class="text-center">

@@ -10,16 +10,16 @@
         body {
             margin: 0;
             padding: 0;
-            overflow: hidden;
+            /* overflow: hidden;  <-- 删除或注释掉这一行 */
             font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
         }
         
         .slide-container {
             width: 1280px;
-            min-height: 720px;
+            min-height: 720px; /* 如果内容确实超出了720px，这里可能需要调整或允许滚动 */
             margin: 0 auto;
             position: relative;
-            overflow: hidden;
+            overflow: hidden; /* 保留这个，让幻灯片本身保持固定大小 */
         }
         
         .pixel-text {
@@ -270,7 +270,7 @@
                         </div>
                         
                         <div class="text-xs text-indigo-200 bg-blue-900 bg-opacity-30 p-2 rounded">
-                            <p>第八世代见证了数字分发成为主流，游戏即服务(GaaS)模式兴起。多平台开发成为标准，独立游戏大量涌现并获得商业成功。Switch的成功证明了创新游戏体验比纯硬件性能更重要，改变了行业竞争思路。</p>
+                            <p>第八世代标志着数字分发成为主流，游戏即服务(GaaS)模式兴起。多平台开发成为标准，独立游戏大量涌现并获得商业成功。Switch的成功证明了创新游戏体验比纯硬件性能更重要，改变了行业竞争思路。</p>
                         </div>
                     </div>
                     
